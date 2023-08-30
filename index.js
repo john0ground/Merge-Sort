@@ -13,4 +13,32 @@
 //    increment index of 2nd array and sorted array
 
 //    close loop
-//    copy remaining elements with a for loop
+//    copy remaining elements with a loop
+
+const A = [ 2, 8, 15, 18, 19, 25 ];
+const B = [ 5, 9, 12, 17 ];
+
+function merge(A, B, a, b) {
+    const sortedArray = [];
+    let iA = 0, 
+        iB = 0,
+        iSorted = 0; 
+
+    //  compare and place
+    while (iA < a && iB < b) {
+        A[iA] < B[iB] ?
+        sortedArray[iSorted++] = A[iA++]:
+        sortedArray[iSorted++] = B[iB++];
+    }
+
+    //  push what remains
+    while (iA < a) {
+        sortedArray.push(A[iA++])
+    }
+
+    while (iB < b) {
+        sortedArray.push(B[iB++])
+    }
+
+    return sortedArray;
+}
