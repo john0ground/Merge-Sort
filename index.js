@@ -40,5 +40,26 @@ function merge(A, B, a, b) {
         sortedArray.push(B[iB++])
     }
 
-    return sortedArray;
+    return sortedArray; 
 }
+
+function sliceLeft(array) {
+    const midIndex = Math.floor(array.length / 2);
+    return array.slice(0, midIndex);
+}
+
+function sliceRight(array) {
+    const midIndex = Math.floor(array.length / 2);
+    return array.slice(midIndex);
+}
+
+function mergeSort(array) {
+    if (array.length > 1) {
+        const firstHalf = sliceLeft(array);
+        const secondHalf = sliceRight(array);
+
+        console.log(firstHalf, secondHalf);
+    }   
+}
+
+mergeSort([ 2, 8, 15, 18, 19, 25 ]);
