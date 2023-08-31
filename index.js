@@ -58,8 +58,15 @@ function mergeSort(array) {
         const firstHalf = sliceLeft(array);
         const secondHalf = sliceRight(array);
 
-        console.log(firstHalf, secondHalf);
-    }   
+        const firstArr = mergeSort(firstHalf);
+        const secondArr = mergeSort(secondHalf);
+
+        return merge(firstArr, secondArr, firstArr.length, secondArr.length)
+    } else {
+        return array;
+    }
 }
 
-mergeSort([ 2, 8, 15, 18, 19, 25 ]);
+const array = [ 9, 3, 7, 5, 6, 4, 8, 2 ];
+// mergeSort(array);
+console.log(mergeSort(array));
